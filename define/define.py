@@ -1,6 +1,11 @@
 import pandas as pd
 
 
+def load_data(url):
+    df = pd.read_csv(url)
+    return df
+
+
 def table(df):
     dct = {}
     for i in df.columns:
