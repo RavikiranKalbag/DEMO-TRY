@@ -35,3 +35,9 @@ def graphical_summary(df):
                            "3rd Quartile": third_quartile, "Maximum": maximum}
 
     return pd.DataFrame.from_dict(summary_dict)
+
+
+def boxplot(df):
+    plt.figure(figsize=(10,10))
+    x = df.boxplot(grid = False)
+    return plt.show()
