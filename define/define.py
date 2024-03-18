@@ -39,6 +39,10 @@ def graphical_summary(df):
 
 
 def boxplot(df):
-    plt.figure(figsize=(10,10))
-    x = df.boxplot(grid = False)
-    return plt.show()
+    plt.figure(figsize=(10, 10))
+    ax = df.boxplot(grid=False)
+
+    for i, median in enumerate(df.median()):
+        ax.text(i + 1, median, f'{median:.2f}', verticalalignment='bottom', horizontalalignment='center', color='black', fontsize=10)
+        
+    plt.show()
